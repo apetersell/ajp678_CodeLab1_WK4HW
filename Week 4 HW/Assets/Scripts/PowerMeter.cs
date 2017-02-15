@@ -7,7 +7,9 @@ public class PowerMeter : MonoBehaviour {
 
 	public float currentPower;
 	public float maxPower;
+	public float birdWorth;
 	public Image content;
+
 
 
 	// Use this for initialization
@@ -36,7 +38,7 @@ public class PowerMeter : MonoBehaviour {
 	{
 		if (currentPower < maxPower) 
 		{
-			currentPower++;
+			currentPower = currentPower + birdWorth;
 		}
 	}
 }

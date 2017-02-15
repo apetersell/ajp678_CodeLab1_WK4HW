@@ -11,12 +11,15 @@ public class PlayerMovement : MonoBehaviour {
 	public float moveSpeed;
 	GameObject meter;
 	PowerMeter pm;
+	public int score;
+	public int scorePerBird;
 
 	// Use this for initialization
 	void Start () {
 
 		meter = GameObject.Find ("Meter");
 		pm = meter.GetComponent<PowerMeter> ();
+		DontDestroyOnLoad (this); 
 		
 	}
 	
@@ -45,6 +48,12 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			Destroy (coll.gameObject); 
 			pm.increaseMeter (); 
+		}
+
+		if (coll.gameObject.tag == "ScoringBird") 
+		{
+			Destroy (coll.gameObject);
+			score = score + scorePerBird;
 		}
 	}
 

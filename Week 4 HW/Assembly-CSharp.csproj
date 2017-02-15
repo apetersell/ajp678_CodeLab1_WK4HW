@@ -46,10 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BGLerp.cs" />
      <Compile Include="Assets\Scripts\BirdSpawner.cs" />
+     <Compile Include="Assets\Scripts\DimensionHop.cs" />
      <Compile Include="Assets\Scripts\MeterColor.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PowerMeter.cs" />
+     <Compile Include="Assets\Scripts\Scoring.cs" />
+     <Compile Include="Assets\Scripts\TimerScript.cs" />
+     <Compile Include="Assets\Scripts\UISaver.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
