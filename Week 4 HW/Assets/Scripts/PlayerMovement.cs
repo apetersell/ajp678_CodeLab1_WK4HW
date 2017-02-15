@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour {
 	public int score;
 	public int scorePerBird;
 	public static PlayerMovement player;
+	private Vector2 fireLocation;
+	public KeyCode fire;
+	public GameObject beam; 
 
 	// Use this for initialization
 	void Start () {
@@ -34,11 +37,13 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		
+		fireLocation = new Vector2 (transform.position.x, transform.position.y);
 		moveBabyMove (up, Vector2.up);
 		moveBabyMove (down, Vector2.down);
 		moveBabyMove (right, Vector2.right);
 		moveBabyMove (left, Vector2.left); 
+		bladeBeamFire ();
 		
 	}
 
@@ -63,6 +68,13 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			Destroy (coll.gameObject);
 			score = score + scorePerBird;
+		}
+	}
+
+	void bladeBeamFire ()
+	{
+		if (Input.GetKeyDown (fire)) {
+			Instantiate (beam, fireLocation, Quaternion.identity);
 		}
 	}
 
