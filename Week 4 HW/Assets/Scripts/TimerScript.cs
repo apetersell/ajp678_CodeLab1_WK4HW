@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour {
 
@@ -19,6 +20,10 @@ public class TimerScript : MonoBehaviour {
 	void Update () {
 
 		pm.currentPower--; 
+
+		if(pm.currentPower == 0) { 
+			SceneManager.LoadScene("Level 1");
+		}
 		
 	}
 }

@@ -13,13 +13,22 @@ public class PlayerMovement : MonoBehaviour {
 	PowerMeter pm;
 	public int score;
 	public int scorePerBird;
+	public static PlayerMovement player;
 
 	// Use this for initialization
 	void Start () {
 
+		if (player == null){
+			player = this; 
+			DontDestroyOnLoad (this);
+		}
+		else
+		{
+			Destroy (gameObject);
+		}
+
 		meter = GameObject.Find ("Meter");
 		pm = meter.GetComponent<PowerMeter> ();
-		DontDestroyOnLoad (this); 
 		
 	}
 	
@@ -46,8 +55,8 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "DangerBird") 
 		{
-			Destroy (coll.gameObject); 
 			pm.increaseMeter (); 
+			Destroy (coll.gameObject); 
 		}
 
 		if (coll.gameObject.tag == "ScoringBird") 
