@@ -33,4 +33,15 @@ public class PlayerMovement : MonoBehaviour {
 		}
 				
 	}
+
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		if (coll.gameObject.tag == "DangerBird") 
+		{
+			Destroy (coll.gameObject); 
+			Debug.Log ("Touched Bird");
+		}
+	}
+
+
 }
