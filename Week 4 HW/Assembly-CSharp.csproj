@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BGLerp.cs" />
      <Compile Include="Assets\Scripts\BirdSpawner.cs" />
      <Compile Include="Assets\Scripts\BladeBeamBehavior.cs" />
+     <Compile Include="Assets\Scripts\BossHealth.cs" />
      <Compile Include="Assets\Scripts\DimensionHop.cs" />
      <Compile Include="Assets\Scripts\MeterColor.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />

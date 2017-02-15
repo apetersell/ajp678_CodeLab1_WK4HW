@@ -7,10 +7,15 @@ public class BladeBeamBehavior : MonoBehaviour {
 	public float beamSpeed;
 	public float beamTimer; 
 	public float beamLimit; 
+	GameObject bossMeter; 
+	BossHealth bh;  
 
 
 	// Use this for initialization
 	void Start () {
+
+		bossMeter = GameObject.Find ("Boss Health");
+		bh = bossMeter.GetComponent<BossHealth> ();
 		
 	}
 	
@@ -24,4 +29,14 @@ public class BladeBeamBehavior : MonoBehaviour {
 		}
 		
 	}
+
+	void OnTriggerEnter2D (Collider2D coll)
+	{
+		if (coll.gameObject.tag == "BossBird")
+		{
+			bh.hurtBoss ();
+		}
+
+	}
+
 }
