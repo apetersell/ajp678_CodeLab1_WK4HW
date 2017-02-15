@@ -9,9 +9,14 @@ public class PlayerMovement : MonoBehaviour {
 	public KeyCode left;
 	public KeyCode right;
 	public float moveSpeed;
+	GameObject meter;
+	PowerMeter pm;
 
 	// Use this for initialization
 	void Start () {
+
+		meter = GameObject.Find ("Meter");
+		pm = meter.GetComponent<PowerMeter> ();
 		
 	}
 	
@@ -39,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (coll.gameObject.tag == "DangerBird") 
 		{
 			Destroy (coll.gameObject); 
-			Debug.Log ("Touched Bird");
+			pm.increaseMeter (); 
 		}
 	}
 
